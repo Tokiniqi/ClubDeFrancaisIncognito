@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Témoignages des élèves</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            border-radius: 15px 15px 15px 15px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background-image: url('paris.jpg') no-repeat center center/cover;
+            background-color: #444; /* Fallback color */
+            color: #fff;
+            padding-top: 30px;
+            min-height: 200px;
+            border-bottom: #77aaff 3px solid;
+            position: relative;
+            border-radius: 15px 15px 0 0;
+        }
+        header h1 {
+        	border-radius: 15px 15px 0 0;
+            margin: 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Ajoute un fond semi-transparent pour améliorer la lisibilité du texte */
+        }
+        
+        footer {
+        	
+            background-color: gray;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            border-radius: 0 0 10px 10px;
+        }
+        .menu-icon {
+        	border-radius: 15px 15px 15px 15px;
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+        .menu-icon div {
+            width: 30px;
+            height: 3px;
+            background-color: red;
+            margin: 5px 0;
+        }
+        nav { /* c'est ce qui s'affiche dans le menu*/
+            display: none;
+            border-radius: 20px 20px 0 0;
+            background: purple;
+            color: #fff;
+            padding: 10px 0;
+            position: absolute;
+            top: 70px;
+            width: 100%;
+            left: 0;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        nav ul li {
+            margin: 10px 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .section {
+            display: none;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .testimonial p {
+            font-style: italic;
+            color: #666;
+        }
+        .testimonial a {
+            display: block;
+            margin-top: 10px;
+            color: #3b5998;
+            text-decoration: none;
+            padding-left: 20px;
+        }
+        form-container {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form-container h3 {
+            margin-top: 0;
+            color: #333;
+        }   
+        form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form-container button {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("gKtvYZ1aOV9PyypLl"); // Remplacez par votre user_id EmailJS
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Cours de français incognito - présenté par INCOGNITO ORG </h1>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+    <nav id="menu">
+        <ul>
+            <li><a href="#infos" onclick="showSection('infos')">Infos du cours</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Nous contacter</a></li>
+            <li><a href="#temoignages" onclick="showSection('temoignages')">Témoignages</a></li>
+            <li><a href="#conseils" onclick="showSection('conseils')">Conseils pour bien débuter</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div id="infos" class="section">
+            <h2>À propos de nous </h2>
+            <p>Découvrez nos cours de français anonymes.</p>
+            <p> Le français est une langue riche en règles minutieuses et en nombreuses exceptions. Son apprentissage demande du temps et de l'implication de la part de chaque personne intéressée. Contrairement à l'anglais, à Madagascar, nous avons l'avantage d'avoir été exposés à la langue française pendant au moins une dizaine d'années. Malgré cela, seule une minorité de personnes atteint un excellent niveau en français, bien que cette langue soit omniprésente dans les hiérarchies et de nombreux domaines à Madagascar.   </p>
+            <p> Pour vous sauver de cette médiocrité, nous sommes là pour vous aider à surmonter tous les obstacles que vous rencontrez. Que ce soit pour renforcer vos bases ou atteindre l'excellence, de l'initiation à l'approfondissement, du DELF au DALF, <b>Cours de français avec incognito</b> vous propose des cours de qualité, soigneusement conçus pour améliorer votre niveau et vous permettre de réussir vos examens de langue sans difficulté.   </p>
+            <p> Nos méthodes sont soigneusement sélectionnées pour garantir notre excellence, et favoriser votre réussite. N'oubliez pas que ce ne sont pas les 10 ou 20 ans d'expérience qui font de nous un bon centre et de bons professeurs, mais notre expertise et notre engagement envers l'excellence. Bref, inutile de rédiger un roman ici, car vous n'avez pas besoin de lire un livre entier sur la page d'accueil de notre site.   </p>
+          
+            <p>    </p>
+        </div>
+        <div id="contact" class="section">
+            <h2>Nous contacter</h2>
+            <p>Email : <a href="mailto:contact@coursdefrancaisanonyme.com">contact@coursdefrancaisanonyme.com</a></p>
+        </div>
+        <div id="temoignages" class="section">
+            <h2>Témoignages</h2>
+            <p>Ci-après sont les témoignages et notes de nos étudiants, témoignant leurs expériences vis-à-vis l'excellence de nos contenus et enseignements. Rassurez-vous, et partez en quête d'excellence avec nous durant l'apprentissage de la langue française.</p>
+            <div class="testimonial">
+                <h3>Jean Dupont</h3>
+                <p>"Les cours sont excellents et m'ont beaucoup aidé à améliorer mon français."</p>
+                <a href="https://www.facebook.com/jean.dupont" target="_blank">Voir le profil Facebook</a>
+            </div>
+            <div class="testimonial">
+                <h3>Marie Curie</h3>
+                <p>"J'adore la méthode d'enseignement. Très efficace et amusante !"</p>
+                <a href="https://www.facebook.com/marie.curie" target="_blank">Voir le profil Facebook</a>
+            </div>
+            <div class="testimonial">
+                <h3>Albert Camus</h3>
+                <p>"Les professeurs sont très compétents et toujours disponibles pour aider."</p>
+                <a href="https://www.facebook.com/albert.camus" target="_blank">Voir le profil Facebook</a>
+            </div>
+    		  <div class="form-container">
+           			<h3>Laisser un témoignage</h3>
+        			   <input type="text" id="name" placeholder="Votre nom">
+           			<textarea id="message" placeholder="Votre témoignage"></textarea>
+          			 <button onclick="sendTestimonial()">Soumettre</button>
+      		 </div>
+        </div>
+        <div id="conseils" class="section">
+            <h2>Conseils pour bien débuter</h2>
+            <p>Apprendre le français peut sembler intimidant au début, mais avec les bonnes stratégies et un peu de persévérance, vous pouvez rapidement progresser. Voici quelques conseils pour bien commencer votre apprentissage :</p>
+            <ul>
+                <li><p><b>Pratiquez régulièrement :</b> La régularité est la clé. Essayez de consacrer un peu de temps chaque jour à l'apprentissage du français, même si ce n'est que 10 à 15 minutes.</p></li>
+                <li><p><b>Écoutez des podcasts et regardez des vidéos en français :</b> L'exposition à la langue parlée vous aidera à améliorer votre compréhension et votre prononciation. Choisissez des contenus qui vous intéressent pour rendre l'apprentissage plus agréable.</p></li>
+                <li><p><b>Lisez en français : </b>Commencez par des livres, des articles ou des bandes dessinées adaptés à votre niveau. La lecture vous aidera à denrichir votre vocabulaire et à comprendre la structure des phrases.</p></li>
+                <li><p><b>Participez à des conversations : </b>Rejoignez des groupes de discussion ou trouvez un partenaire d'échange linguistique. Parler avec des natifs ou d'autres apprenants vous permettra de pratiquer et de gagner en confiance.</p></li>
+                <li><p><b>Utilisez des applications et des ressources en ligne :</b> Il existe de nombreuses applications et sites web qui offrent des exercices interactifs, des jeux et des leçons pour apprendre le français de manière ludique.</p></li>
+                        <li><p><b>Notez vos progrès : </b>Tenez un journal de vos apprentissages et de vos progrès. Cela vous aidera à rester motivé et à voir combien vous avez avancé.</p></li>
+                <li><p><b>Soyez patient et persévérant :</b> L'apprentissage d'une nouvelle langue prend du temps. Ne vous découragez pas par les erreurs et les difficultés. Chaque petit progrès est une victoire !</p></li>
+
+            </ul>
+                   <p>En suivant ces conseils, vous serez bien équipé pour commencer votre aventure dans l'apprentissage du français. Mais bien que tout cela soit de bonnes idées, ce ne sont pas des moyens suffisants, vous allez prendre une éternité si vous partez du niveau débutant.</p>
+					<p> Alors, ne procrastinez plus ! Nous serions ravis de vous tenir compagnie dans cette aventure, en l'occurrence, contactez-nous au plus vite pour ne plus perdre de temps précieux . </p>
+					<p> Nous espérons vous voir parmi nous, à très bientôt ! 🤩</p>
+        </div>
+    </div>
+    <footer>
+        <small><p>©2024 Cours de français incognito / tout droit réservé</p> </small>
+        <small><p>Contribution au développement : Anonyme </p></small>
+        <small><p>Soutiens aux témoignages et parrainages : Chaque élève de CFI</p></small>
+    </footer>
+    <script>
+    	
+    function sendTestimonial() {
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+
+            if (name && message) {
+                emailjs.send("serviceID_tokiniqi0302", "templateID_tokiniqi0302", {
+                    name: name,
+                    message: message
+                }).then((response) => {
+                    alert('Témoignage envoyé avec succès !');
+                    document.getElementById('name').value = '';
+                    document.getElementById('message').value = '';
+                }, (error) => {
+                    alert('Erreur lors de l\'envoi du témoignage.');
+                });
+            } else {
+                alert('Veuillez remplir tous les champs.');
+            }
+        } 
+        
+        function editTestimonial(button) {
+            const testimonial = button.parentElement;
+            const name = testimonial.querySelector('h3').textContent;
+            const message = testimonial.querySelector('p').textContent.replace(/"/g, '');
+
+            const newName = prompt('Modifier le nom:', name);
+            const newMessage = prompt('Modifier le témoignage:', message);
+
+            if (newName && newMessage) {
+                testimonial.querySelector('h3').textContent = newName;
+                testimonial.querySelector('p').textContent = `"${newMessage}"`;
+            }
+        }
+        
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Show the first section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('infos');
+        });
+    </script>
+</body>
+</html>
+
+               
